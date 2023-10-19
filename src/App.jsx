@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 const App = () => {
   const [user, setUser] = useState([])
   useEffect(()=> {
-    fetch(import.meta.env.VITE_API+"/users")
+    fetch(import.meta.env.VITE_API+"/testt")
     .then(res => res.json())
     .then(result => {
       setUser(result)
@@ -12,8 +12,8 @@ const App = () => {
   },[])
   return (
     <div>
-      <ul>{user.map(user => (
-          <div key={user.id}>{user.id}, {user.name}, {user.email}</div>
+      <ul>{user.map(t => (
+          <div key={t.id}>{t.id}, {t.fname}, {t.email}</div>
         ))}
         </ul>
     </div>
